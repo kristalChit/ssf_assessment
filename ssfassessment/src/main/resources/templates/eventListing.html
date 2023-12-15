@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>List of events</h1>
+    <form method="Get" data-th-action="${/register}" data-th-object="${event}">
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Event ID</th>
+                        <th>Event Name</th>
+                        <th>Event Size</th>
+                        <th>Event Date</th>
+                        <th>Action</th>
+                    </tr>
+                <tbody>
+                    <tr th:each="add: ${events}">
+                        <td th:utext="${add.eventId}"></td>
+                        <td th:utext="${add.eventName}"></td>
+                        <td th:utext="${add.eventSize}"></td>
+                        <td th:utext="${add.eventDate}"></td>
+                        <td>
+                            <button type="submit" class="btn btn-primary" formaction="/register"
+                                value="register">Register</button>
+                        </td>
+                        </td>
+                    </tr>
+                </tbody>
+                </thead>
+            </table>
+        </div>
+</body>
+
+</html>
+
+<!-- 
+//Task5
+// attributes:eventId, eventName, eventSize, eventDate, participants
+// Event Date should be displayed in dd-MM-yyyy
+// 'Register' button for each event listed should direct to view1.html to identify the event tt you'll be registering for
+-->

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+</head>
+<body>
+
+    <body>
+        <h1>Error</h1>
+    </head>
+    <body>
+        <div class="container">
+            <h5> You didn't manage to register for the following reasons:</h5>
+            <br><br>
+            <span class="alert" th:if="${#fields.hasErrors('ticketLimit')}" th:errors="*{ticketLimit}" ></span>
+            <span class="alert" th:if="${#fields.hasErrors('participantCount')}" th:errors="*{participantCount}" ></span>
+            <span class="alert" th:if="${#fields.hasErrors('eventSize')}" th:errors="*{eventSize}" ></span>
+            <br><br>
+
+            <button type="button" th:href="@{/register}">Back To Event Listing</button>
+
+</body>
+</html>
+
+<!-- 
+//Task5
+//pass validation rules but fails server validation rules
+//appropriate error msg should display
+//Back to event listing, link bring back user to the event listing page
+// -->
